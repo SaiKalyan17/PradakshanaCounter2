@@ -4,8 +4,7 @@ import pandas as pd
 import os
 
 app = Flask(__name__)
-CORS(app)
-
+CORS(app, origins="*")
 EXCEL_FILE = 'data.xlsx'
 
 # Initialize file if it doesn't exist
