@@ -1,4 +1,5 @@
 from flask import Flask, request, jsonify
+from flask import send_file
 from flask_cors import CORS
 import pandas as pd
 import os
@@ -15,6 +16,10 @@ if not os.path.exists(EXCEL_FILE):
 def home():
     return 'Pradakshana Counter API Running', 200
 
+
+@app.route('/download', methods=['GET'])
+def download_excel():
+    return send_file(EXCEL_FILE, as_attachment=True)
 @app.route('/submit', methods=['POST'])
 def submit():
     data = request.get_json()
