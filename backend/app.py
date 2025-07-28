@@ -4,7 +4,7 @@ import pandas as pd
 import os
 
 app = Flask(__name__)
-CORS(app, origins="*")
+CORS(app, origins=["https://pradakshana-counter2.vercel.app"]) 
 EXCEL_FILE = 'data.xlsx'
 
 # Initialize file if it doesn't exist
