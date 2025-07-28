@@ -11,6 +11,10 @@ EXCEL_FILE = 'data.xlsx'
 if not os.path.exists(EXCEL_FILE):
     pd.DataFrame(columns=['Name', 'Count']).to_excel(EXCEL_FILE, index=False)
 
+@app.route('/', methods=['GET', 'HEAD'])
+def home():
+    return 'Pradakshana Counter API Running', 200
+
 @app.route('/submit', methods=['POST'])
 def submit():
     data = request.get_json()
