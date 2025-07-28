@@ -13,7 +13,7 @@ function App() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post('https://pradakshanacounter2.onrender.com', {
+      const res = await axios.post('https://pradakshanacounter2.onrender.com/submit', {
         name: form.name,
         count: Number(form.count)
       });
